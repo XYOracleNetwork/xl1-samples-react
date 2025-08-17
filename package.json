@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/package.json",
-  "name": "@xyo-network/xl1-protocol-samples-react",
+  "name": "@xyo-network/xl1-samples-react",
   "version": "1.0.0",
   "description": "XYO Layer One Protocol Sample Code",
   "homepage": "https://xyo.network",
@@ -22,9 +22,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build --mode production",
-    "package-build": "yarn build",
-    "serve": "yarn build && yarn dlx serve ./build",
-    "start": "yarn vite"
+    "package-build": "npm run build",
+    "serve": "npm run build && npm run dlx serve ./build",
+    "start": "npm run vite"
   },
   "dependencies": {
     "@mui/material": "^7.3.1",
@@ -46,7 +46,6 @@
     "@vitejs/plugin-react-swc": "^4.0.0",
     "@xylabs/assert": "^5.0.8",
     "@xylabs/hex": "^5.0.8",
-    "@xylabs/ts-scripts-yarn3": "^7.1.2",
     "@xylabs/tsconfig-react": "^7.1.2",
     "@xyo-network/id-payload-plugin": "5.0.5",
     "@xyo-network/payload": "^5.0.5",
