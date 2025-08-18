@@ -2,15 +2,9 @@
 
 [![logo][]](https://xyo.network)
 
-[![npm-badge][]][npm-link]
-[![npm-downloads-badge][]][npm-link]
-[![jsdelivr-badge][]][jsdelivr-link]
-[![npm-license-badge][]](LICENSE)
-[![socket-badge][]][socket-link]
+[![main-build][]][main-build-link]
 
-XYO Layer One Protocol Sample Code
-
-
+XYO Layer One Protocol Sample Code (React)
 
 ## Reference
 
@@ -56,14 +50,5 @@ function XL1BrowserSample(): Element;
 
 [logo]: https://cdn.xy.company/img/brand/XYO_full_colored.png
 
-[npm-badge]: https://img.shields.io/npm/v/@xyo-network/xl1-protocol-samples-react.svg
-[npm-link]: https://www.npmjs.com/package/@xyo-network/xl1-protocol-samples-react
-
-[npm-downloads-badge]: https://img.shields.io/npm/dw/@xyo-network/xl1-protocol-samples-react
-[npm-license-badge]: https://img.shields.io/npm/l/@xyo-network/xl1-protocol-samples-react
-
-[jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/@xyo-network/xl1-protocol-samples-react/badge
-[jsdelivr-link]: https://www.jsdelivr.com/package/npm/@xyo-network/xl1-protocol-samples-react
-
-[socket-badge]: https://socket.dev/api/badge/npm/package/@xyo-network/xl1-protocol-samples-react
-[socket-link]: https://socket.dev/npm/package/@xyo-network/xl1-protocol-samples-react
+[main-build]: https://github.com/XYOracleNetwork/xl1-samples-react/actions/workflows/build.yml/badge.svg
+[main-build-link]: https://github.com/XYOracleNetwork/xl1-samples-react/actions/workflows/build.yml
