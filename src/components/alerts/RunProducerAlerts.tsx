@@ -6,7 +6,7 @@ import {
 import { grey } from '@mui/material/colors'
 import { useState } from 'react'
 
-const START_COMMAND = 'npm run xl1 --logLevel="warn"'
+const START_COMMAND = 'npm start-cli"'
 
 const StartProducerAlert: React.FC<AlertProps> = (props) => {
   const [copied, setCopied] = useState(false)
