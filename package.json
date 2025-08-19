@@ -23,7 +23,8 @@
   "scripts": {
     "build": "vite build --mode production",
     "package-build": "npm run build",
-    "serve": "npm run build && npm run dlx serve ./build",
+    "serve": "npm run build && npx serve ./build",
+    "start-cli": "npx xl1 --logLevel='warn'",
     "start": "npx vite",
     "updo": "npx npm-check-updates -i"
   },
@@ -53,6 +54,7 @@
     "dotenv": "~17.2.1",
     "npm-check-updates": "~18.0.2",
     "typescript": "~5.9.2",
+    "serve": "~14.2.4",
     "vite": "~7.1.2",
     "vite-plugin-top-level-await": "~1.6.0"
   },
