@@ -11,6 +11,8 @@ XYO Layer One Protocol Sample Code (React)
 1. Install the dependencies: `npm install`
 1. Start the sample website: `npm run serve`
     1. Visit the website it serves (i.e. http://localhost:3000)
+1. Start the cli: `npm run start-cli`
+    1. Copy the seed phrase from the cli output
 1. Follow the instructions on the sample page
 
 ## Maintainers
