@@ -6,32 +6,12 @@
 
 XYO Layer One Protocol Sample Code (React)
 
-## Reference
+## Getting Started
 
-**@xyo-network/xl1-protocol-samples-react**
-
-***
-
-## Functions
-
-- [XL1BrowserSample](#functions/XL1BrowserSample)
-
-### functions
-
-  ### <a id="XL1BrowserSample"></a>XL1BrowserSample
-
-[**@xyo-network/xl1-protocol-samples-react**](#../README)
-
-***
-
-```ts
-function XL1BrowserSample(): Element;
-```
-
-## Returns
-
-`Element`
-
+1. Install the dependencies: `npm install`
+1. Start the sample website: `npm run serve`
+    1. Visit the website it serves (i.e. http://localhost:3000)
+1. Follow the instructions on the sample page
 
 ## Maintainers
 
