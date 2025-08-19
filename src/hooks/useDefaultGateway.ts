@@ -2,14 +2,15 @@ import type { XyoGatewayProvider } from '@xyo-network/xl1-protocol'
 import { useEffect, useState } from 'react'
 
 import { getXyoGateway } from '../getXyoGateway.ts'
+import { usePromise } from '@xylabs/react-promise'
 
 export const useDefaultGateway = () => {
   const [gateway, setGateway] = useState<XyoGatewayProvider>()
   const [error, setError] = useState<Error | null>(null)
 
-  useEffect(() => {
+  usePromise(async () => {
     try {
-      const xyoGateway = getXyoGateway({ assert: true })
+      const xyoGateway = await getXyoGateway({ assert: true })
       setGateway(xyoGateway)
     } catch {
       setError(new Error('XYO Gateway not available'))

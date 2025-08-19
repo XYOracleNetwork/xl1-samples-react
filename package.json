@@ -33,6 +33,7 @@
     "@xylabs/assert": "~5.0.10",
     "@xylabs/delay": "~5.0.10",
     "@xylabs/hex": "~5.0.10",
+    "@xylabs/react-promise": "~7.0.4",
     "@xylabs/typeof": "~5.0.10",
     "@xyo-network/id-payload-plugin": "~5.0.7",
     "@xyo-network/payload-builder": "~5.0.7",
