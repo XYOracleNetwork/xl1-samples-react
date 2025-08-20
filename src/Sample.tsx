@@ -3,7 +3,7 @@ import {
 } from '@mui/material'
 import { assertEx } from '@xylabs/assert'
 import { type Hash, isHash } from '@xylabs/hex'
-import { isDefined } from '@xylabs/typeof'
+import { isDefined, isUndefined } from '@xylabs/typeof'
 import type { Id } from '@xyo-network/id-payload-plugin'
 import { PayloadBuilder } from '@xyo-network/payload-builder'
 import { type HashPayload } from '@xyo-network/xl1-protocol'
@@ -12,7 +12,6 @@ import { useState } from 'react'
 import {
   RunProducerAlerts, TxConfirmedAlert, WalletAlerts,
 } from './components/index.ts'
-import { hasXyoWalletInjectable } from './hasXyoWalletInjectable.ts'
 import { useDefaultGateway, useOnBoarding } from './hooks/index.ts'
 // eslint-disable-next-line import-x/no-internal-modules
 import Xl13DLogo from './images/XL1_3D_Token_Mainnet.svg'
@@ -79,7 +78,7 @@ export const XL1BrowserSample = () => {
         {showSubmitTransaction === true && (
           <Stack alignItems="start">
             {/* {gatewayError ? <Alert severity="error">{gatewayError.message}</Alert> : null} */}
-            <Button variant="contained" onClick={() => void submitTransaction()} disabled={!hasXyoWalletInjectable()}>Submit Transaction</Button>
+            <Button variant="contained" onClick={() => void submitTransaction()} disabled={isUndefined(gateway)}>Submit Transaction</Button>
           </Stack>
         )}
         {isDefined(confirmed) && <TxConfirmedAlert hash={confirmed} />}

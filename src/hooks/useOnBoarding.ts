@@ -1,14 +1,15 @@
 import { useCheckLocalRpc } from '@xyo-network/react-chain-provider'
 
-import { useCheckWalletInstalled } from './useCheckWalletInstalled.ts'
+import { useDefaultGateway } from './useDefaultGateway.ts'
+import { isDefined, isUndefined } from '@xylabs/typeof'
 
 export const useOnBoarding = () => {
-  const walletInstalled = useCheckWalletInstalled()
+  const { gateway } = useDefaultGateway()
   const { isLocalProducer } = useCheckLocalRpc()
 
   const producerIsReachable = isLocalProducer
-  const walletIsInstalled = producerIsReachable && walletInstalled
-  const walletIsNotInstalled = producerIsReachable ? !walletInstalled : undefined
+  const walletIsInstalled = producerIsReachable && isDefined(gateway)
+  const walletIsNotInstalled = producerIsReachable ? isUndefined(gateway) : undefined
   const showSubmitTransaction = producerIsReachable && walletIsInstalled
 
   return {
