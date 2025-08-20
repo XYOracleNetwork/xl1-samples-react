@@ -1,7 +1,7 @@
 import type { XyoGatewayProvider } from '@xyo-network/xl1-protocol'
 import { useSyncExternalStore } from 'react'
 
-import { getXyoGateway } from '../getXyoGateway.ts'
+import { getXyoGateway } from '../helpers/index.ts'
 
 interface GatewayState {
   gateway?: XyoGatewayProvider
