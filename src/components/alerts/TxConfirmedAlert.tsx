@@ -8,7 +8,7 @@ export interface TxConfirmedAlertProps extends AlertProps {
 }
 
 export const TxConfirmedAlert: React.FC<TxConfirmedAlertProps> = ({ hash, ...props }) => {
-  return (
+  return hash ? (
     <Alert severity="success" {...props}>
       <AlertTitle>Transaction successfully confirmed!</AlertTitle>
       See your local
@@ -18,5 +18,5 @@ export const TxConfirmedAlert: React.FC<TxConfirmedAlertProps> = ({ hash, ...pro
       through our Blockchain Explorer.
       {' '}
     </Alert>
-  )
+  ) : null
 }
