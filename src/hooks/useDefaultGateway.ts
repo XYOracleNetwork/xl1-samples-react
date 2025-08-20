@@ -1,21 +1,57 @@
 import type { XyoGatewayProvider } from '@xyo-network/xl1-protocol'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 
 import { getXyoGateway } from '../getXyoGateway.ts'
-import { usePromise } from '@xylabs/react-promise'
+
+interface GatewayState {
+  gateway?: XyoGatewayProvider
+  error: Error | null
+  isLoading: boolean
+}
+
+let currentState: GatewayState = {
+  gateway: undefined,
+  error: null,
+  isLoading: false
+}
+
+const listeners = new Set<() => void>()
+
+const emitChange = () => {
+  listeners.forEach(listener => listener())
+}
+
+const updateState = (newState: Partial<GatewayState>) => {
+  currentState = { ...currentState, ...newState }
+  emitChange()
+}
+
+const initializeGateway = async () => {
+  if (currentState.isLoading || currentState.gateway) return
+  
+  updateState({ isLoading: true, error: null })
+  
+  try {
+    const gateway = await getXyoGateway({ assert: true })
+    updateState({ gateway, isLoading: false, error: null })
+  } catch (error) {
+    updateState({ error: error as Error, isLoading: false })
+  }
+}
+
+const subscribe = (listener: () => void) => {
+  listeners.add(listener)
+  
+  void initializeGateway()
+  
+  return () => {
+    listeners.delete(listener)
+  }
+}
+
+const getSnapshot = (): GatewayState => currentState
 
 export const useDefaultGateway = () => {
-  const [gateway, setGateway] = useState<XyoGatewayProvider>()
-  const [error, setError] = useState<Error | null>(null)
-
-  usePromise(async () => {
-    try {
-      const xyoGateway = await getXyoGateway({ assert: true })
-      setGateway(xyoGateway)
-    } catch {
-      setError(new Error('XYO Gateway not available'))
-    }
-  }, [])
-
-  return { gateway, error }
+  return useSyncExternalStore(subscribe, getSnapshot)
 }
+
