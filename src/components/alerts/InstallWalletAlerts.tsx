@@ -1,6 +1,7 @@
 import type { AlertProps } from '@mui/material'
 import {
   Alert, AlertTitle, Button, Link, List, ListItem,
+  Stack,
 } from '@mui/material'
 
 const InstallWalletAlert: React.FC<AlertProps> = (props) => {
@@ -12,7 +13,9 @@ const InstallWalletAlert: React.FC<AlertProps> = (props) => {
       <Link href="https://chromewebstore.google.com/detail/xl1-wallet/fblbagcjeigmhakkfgjpdlcapcgmcfbm" target="_blank">wallet</Link>
       {' '}
       from the chrome web store to use this site.
-      <Button variant="contained" onClick={() => globalThis.location.reload()}>Refresh</Button>
+      <Stack alignItems="start" mt={1}>
+        <Button variant="contained" onClick={() => globalThis.location.reload()}>Refresh</Button>
+      </Stack>
     </Alert>
   )
 }
