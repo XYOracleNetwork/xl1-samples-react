@@ -21,7 +21,8 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "vite build --mode production",
+    "check-node-version": "node ./scripts/check-node-version.mjs",
+    "build": "npm run check-node-version && vite build --mode production",
     "lint": "eslint",
     "package-build": "npm run build",
     "serve": "npm run build && npx serve ./build",
