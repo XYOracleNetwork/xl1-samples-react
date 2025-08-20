@@ -4,7 +4,7 @@ const localGatewayName = 'local' as GatewayName
 
 const GATEWAY_LISTENER_TIMEOUT = 5000
 
-export const hasXyoWalletGateway = () => {
+const hasXyoWalletGateway = () => {
   return 'client' in globalThis.xyo
 }
 
