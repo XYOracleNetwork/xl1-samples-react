@@ -1,6 +1,5 @@
 import {
-  Alert,
-  Container, Stack,
+  Alert, Container, Stack,
 } from '@mui/material'
 import { assertEx } from '@xylabs/assert'
 import type { Hash } from '@xylabs/hex'
