@@ -1,2 +1,2 @@
-export * from './getXyoGateway.ts'
 export * from './buildSamplePayloads.ts'
+export * from './getXyoGateway.ts'

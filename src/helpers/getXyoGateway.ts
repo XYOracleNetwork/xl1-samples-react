@@ -10,7 +10,7 @@ const hasXyoWalletGateway = () => {
 
 export const listenForWalletInjection = (onPluginReady: () => void, onTimeout: () => void) => {
   let resolved = false
-  const listener: EventListener = (e) => {
+  const listener: EventListener = () => {
     onPluginReady()
     resolved = true
   }
@@ -22,22 +22,18 @@ export const listenForWalletInjection = (onPluginReady: () => void, onTimeout: (
   }, GATEWAY_LISTENER_TIMEOUT)
 }
 
-export async function getXyoGateway(options: { assert: true }): Promise<XyoGatewayProvider>
-export async function getXyoGateway(options?: { assert?: boolean }): Promise<XyoGatewayProvider | undefined> {
-  const { assert } = options ?? {}
-  if (hasXyoWalletGateway()) {
-    return globalThis.xyo.client?.gateways?.[localGatewayName]
-  } else {
+export async function getXyoGateway(): Promise<XyoGatewayProvider | undefined> {
+  return hasXyoWalletGateway()
+    ? globalThis.xyo.client?.gateways?.[localGatewayName]
     // listen for the XyoWallet to be injected
-    return await new Promise<XyoGatewayProvider | undefined>((resolve, reject) => {
-      listenForWalletInjection(
-        () => {
-          resolve(globalThis.xyo.client?.gateways?.[localGatewayName])
-        },
-        () => {
-          reject(new Error('XYO Wallet not installed'))
-        }
-      )
-    })
-  }
+    : await new Promise<XyoGatewayProvider | undefined>((resolve, reject) => {
+        listenForWalletInjection(
+          () => {
+            resolve(globalThis.xyo.client?.gateways?.[localGatewayName])
+          },
+          () => {
+            reject(new Error('XYO Wallet not installed'))
+          },
+        )
+      })
 }

@@ -8,15 +8,17 @@ export interface TxConfirmedAlertProps extends AlertProps {
 }
 
 export const TxConfirmedAlert: React.FC<TxConfirmedAlertProps> = ({ hash, ...props }) => {
-  return hash ? (
-    <Alert severity="success" {...props}>
-      <AlertTitle>Transaction successfully confirmed!</AlertTitle>
-      See your local
-      {' '}
-      <Link href={`https://explore.xyo.network/xl1/local/transaction/${hash}`} target="_blank">transaction</Link>
-      {' '}
-      through our Blockchain Explorer.
-      {' '}
-    </Alert>
-  ) : null
+  return hash
+    ? (
+        <Alert severity="success" {...props}>
+          <AlertTitle>Transaction successfully confirmed!</AlertTitle>
+          See your local
+          {' '}
+          <Link href={`https://explore.xyo.network/xl1/local/transaction/${hash}`} target="_blank">transaction</Link>
+          {' '}
+          through our Blockchain Explorer.
+          {' '}
+        </Alert>
+      )
+    : null
 }

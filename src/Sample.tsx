@@ -1,6 +1,6 @@
 import {
   Alert,
-  Container, Stack
+  Container, Stack,
 } from '@mui/material'
 import { assertEx } from '@xylabs/assert'
 import type { Hash } from '@xylabs/hex'
@@ -8,7 +8,9 @@ import { isHash } from '@xylabs/hex'
 import { isUndefined } from '@xylabs/typeof'
 import { useState } from 'react'
 
-import { Onboarding, SubmitTransactionButton, TxConfirmedAlert, WelcomeStack } from './components/index.ts'
+import {
+  Onboarding, SubmitTransactionButton, TxConfirmedAlert, WelcomeStack,
+} from './components/index.ts'
 import { buildSamplePayloads } from './helpers/index.ts'
 import { useDefaultGateway } from './hooks/index.ts'
 
@@ -44,7 +46,7 @@ export const XL1BrowserSample = () => {
         {error ? <Alert severity="error">{error.message}</Alert> : null}
         <WelcomeStack />
         <Onboarding />
-        <SubmitTransactionButton onClick={() => void submitTransaction()} disabled={isUndefined(gateway)}>Submit Transaction</SubmitTransactionButton>  
+        <SubmitTransactionButton onClick={() => void submitTransaction()} disabled={isUndefined(gateway)}>Submit Transaction</SubmitTransactionButton>
         <TxConfirmedAlert hash={confirmed} />
       </Stack>
 

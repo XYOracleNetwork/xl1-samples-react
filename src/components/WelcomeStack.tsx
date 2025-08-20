@@ -1,4 +1,6 @@
-import { Stack, StackProps, Typography } from "@mui/material";
+import type { StackProps } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
+
 // eslint-disable-next-line import-x/no-internal-modules
 import Xl13DLogo from '../images/XL1_3D_Token_Mainnet.svg'
 

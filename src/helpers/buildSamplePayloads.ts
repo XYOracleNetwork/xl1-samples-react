@@ -1,6 +1,6 @@
-import { Id } from "@xyo-network/id-payload-plugin"
-import { PayloadBuilder } from "@xyo-network/payload-builder"
-import { HashPayload } from "@xyo-network/xl1-protocol"
+import type { Id } from '@xyo-network/id-payload-plugin'
+import { PayloadBuilder } from '@xyo-network/payload-builder'
+import type { HashPayload } from '@xyo-network/xl1-protocol'
 
 export const buildSamplePayloads = async () => {
   // Data to store off-chain
