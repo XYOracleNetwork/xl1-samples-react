@@ -4,6 +4,8 @@ import {
   Stack,
 } from '@mui/material'
 
+import { CollapsibleAlert } from './CollapsibleAlert.tsx'
+
 const InstallWalletAlert: React.FC<AlertProps> = (props) => {
   return (
     <Alert severity="error" {...props}>
@@ -30,8 +32,7 @@ const WalletInstalledAlert: React.FC<AlertProps> = (props) => {
 
 const WalletSetupAlert: React.FC<AlertProps> = (props) => {
   return (
-    <Alert severity="info" {...props}>
-      <AlertTitle>Wallet Setup Required</AlertTitle>
+    <CollapsibleAlert alertTitle="Wallet Setup Required" severity="info" {...props}>
       Once the wallet is installed:
       <List>
         <ListItem>
@@ -50,7 +51,7 @@ const WalletSetupAlert: React.FC<AlertProps> = (props) => {
           • Change the network switcher in the upper left-hand corner to 'Local'.
         </ListItem>
       </List>
-    </Alert>
+    </CollapsibleAlert>
   )
 }
 
