@@ -4,6 +4,7 @@ import {
   Stack,
 } from '@mui/material'
 
+import type { CollapsableAlertProps } from './CollapsibleAlert.tsx'
 import { CollapsibleAlert } from './CollapsibleAlert.tsx'
 
 const InstallWalletAlert: React.FC<AlertProps> = (props) => {
@@ -30,7 +31,7 @@ const WalletInstalledAlert: React.FC<AlertProps> = (props) => {
   )
 }
 
-const WalletSetupAlert: React.FC<AlertProps> = (props) => {
+const WalletSetupAlert: React.FC<CollapsableAlertProps> = (props) => {
   return (
     <CollapsibleAlert alertTitle="Wallet Setup Required" severity="info" {...props}>
       Once the wallet is installed:

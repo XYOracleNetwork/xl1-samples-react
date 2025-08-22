@@ -6,7 +6,11 @@ import {
 import { isDefined } from '@xylabs/typeof'
 import React, { useState } from 'react'
 
-export const CollapsibleAlert: React.FC<AlertProps & { alertTitle: string }> = ({
+export interface CollapsableAlertProps extends AlertProps {
+  alertTitle?: string
+}
+
+export const CollapsibleAlert: React.FC<CollapsableAlertProps> = ({
   alertTitle, sx, ...props
 }) => {
   const [open, setOpen] = useState(true)

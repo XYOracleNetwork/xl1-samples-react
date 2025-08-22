@@ -6,6 +6,7 @@ import {
 import { grey } from '@mui/material/colors'
 import { useState } from 'react'
 
+import type { CollapsableAlertProps } from './CollapsibleAlert.tsx'
 import { CollapsibleAlert } from './CollapsibleAlert.tsx'
 
 const START_COMMAND = 'npm run start-cli'
@@ -65,7 +66,7 @@ const StartProducerAlert: React.FC<AlertProps> = (props) => {
   )
 }
 
-const ProducerFoundAlert: React.FC<AlertProps> = (props) => {
+const ProducerFoundAlert: React.FC<CollapsableAlertProps> = (props) => {
   return (
     <CollapsibleAlert severity="success" alertTitle="Connected to Local Blockchain" {...props}>
       You can now submit transactions to your local XYO Layer One blockchain.
@@ -73,7 +74,7 @@ const ProducerFoundAlert: React.FC<AlertProps> = (props) => {
   )
 }
 
-const CopyProducerPhraseAlert: React.FC<AlertProps> = (props) => {
+const CopyProducerPhraseAlert: React.FC<CollapsableAlertProps> = (props) => {
   return (
     <CollapsibleAlert alertTitle="Copy the Producer Phrase" severity="info" {...props}>
       Check the CLI output for the producer seed phrase. You will need this to see balances and submit transactions in your wallet.
