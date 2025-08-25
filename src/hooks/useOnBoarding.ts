@@ -1,10 +1,11 @@
 import { isDefined, isUndefined } from '@xylabs/typeof'
 import { useCheckLocalRpc } from '@xyo-network/react-chain-provider'
 
-import { useDefaultGateway } from './useDefaultGateway.ts'
+import { LocalGatewayName } from '../helpers/index.ts'
+import { useGateway } from './useGateway.ts'
 
 export const useOnBoarding = () => {
-  const { gateway } = useDefaultGateway()
+  const { gateway } = useGateway(LocalGatewayName)
   const { isLocalProducer } = useCheckLocalRpc()
 
   const producerIsReachable = isLocalProducer

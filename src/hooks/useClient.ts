@@ -1,16 +1,16 @@
-import type { XyoGatewayProvider } from '@xyo-network/xl1-protocol'
+import type { XyoClient } from '@xyo-network/xl1-protocol'
 import { useSyncExternalStore } from 'react'
 
-import { getXyoGateway } from '../helpers/index.ts'
+import { getXyoClient } from '../helpers/index.ts'
 
-interface GatewayState {
+interface ClientState {
+  client?: XyoClient
   error: Error | null
-  gateway?: XyoGatewayProvider
   isLoading: boolean
 }
 
-let currentState: GatewayState = {
-  gateway: undefined,
+let currentState: ClientState = {
+  client: undefined,
   error: null,
   isLoading: false,
 }
@@ -21,20 +21,20 @@ const emitChange = () => {
   for (const listener of listeners) listener()
 }
 
-const updateState = (newState: Partial<GatewayState>) => {
+const updateState = (newState: Partial<ClientState>) => {
   currentState = { ...currentState, ...newState }
   emitChange()
 }
 
-const initializeGateway = async () => {
-  if (currentState.isLoading || currentState.gateway) return
+const initializeClient = async () => {
+  if (currentState.isLoading || currentState.client) return
 
   updateState({ isLoading: true, error: null })
 
   try {
-    const gateway = await getXyoGateway()
+    const client = await getXyoClient()
     updateState({
-      gateway, isLoading: false, error: null,
+      client, isLoading: false, error: null,
     })
   } catch (error) {
     updateState({ error: error as Error, isLoading: false })
@@ -44,15 +44,15 @@ const initializeGateway = async () => {
 const subscribe = (listener: () => void) => {
   listeners.add(listener)
 
-  void initializeGateway()
+  void initializeClient()
 
   return () => {
     listeners.delete(listener)
   }
 }
 
-const getSnapshot = (): GatewayState => currentState
+const getSnapshot = (): ClientState => currentState
 
-export const useDefaultGateway = () => {
+export const useClient = () => {
   return useSyncExternalStore(subscribe, getSnapshot)
 }
