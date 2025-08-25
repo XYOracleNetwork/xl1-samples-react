@@ -1,9 +1,10 @@
 import type { ButtonProps } from '@mui/material'
 import { Button } from '@mui/material'
 import { isUndefined } from '@xylabs/typeof'
+import { useGateway } from '@xyo-network/react-chain-provider'
 
 import { LocalGatewayName } from '../../helpers/index.ts'
-import { useGateway, useOnBoarding } from '../../hooks/index.ts'
+import { useOnBoarding } from '../../hooks/index.ts'
 
 export const SubmitTransactionButton: React.FC<ButtonProps> = (props) => {
   const { gateway } = useGateway(LocalGatewayName)

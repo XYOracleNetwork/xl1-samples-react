@@ -5,14 +5,13 @@ import { assertEx } from '@xylabs/assert'
 import type { Hash } from '@xylabs/hex'
 import { isHash } from '@xylabs/hex'
 import { isUndefined } from '@xylabs/typeof'
-import type { GatewayName } from '@xyo-network/xl1-protocol'
+import { useGateway } from '@xyo-network/react-chain-provider'
 import { useState } from 'react'
 
 import {
   Onboarding, SubmitTransactionButton, TxConfirmedAlert, WelcomeStack,
 } from './components/index.ts'
 import { buildSamplePayloads, LocalGatewayName } from './helpers/index.ts'
-import { useGateway } from './hooks/index.ts'
 
 export const XL1BrowserSample = () => {
   const [error, setError] = useState<Error>()

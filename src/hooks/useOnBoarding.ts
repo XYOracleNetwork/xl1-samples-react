@@ -1,8 +1,7 @@
 import { isDefined, isUndefined } from '@xylabs/typeof'
-import { useCheckLocalRpc } from '@xyo-network/react-chain-provider'
+import { useCheckLocalRpc, useGateway } from '@xyo-network/react-chain-provider'
 
 import { LocalGatewayName } from '../helpers/index.ts'
-import { useGateway } from './useGateway.ts'
 
 export const useOnBoarding = () => {
   const { gateway } = useGateway(LocalGatewayName)
