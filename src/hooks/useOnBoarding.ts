@@ -1,11 +1,24 @@
-import { isDefined, isUndefined } from '@xylabs/typeof'
-import { useCheckLocalRpc, useGateway } from '@xyo-network/react-chain-provider'
+import {
+  isDefined, isDefinedNotNull, isUndefined,
+} from '@xylabs/typeof'
+import { useGatewayFromWallet } from '@xyo-network/react-chain-client'
+import { useEffect, useState } from 'react'
 
 import { LocalGatewayName } from '../helpers/index.ts'
 
 export const useOnBoarding = () => {
-  const { gateway } = useGateway(LocalGatewayName)
-  const { isLocalProducer } = useCheckLocalRpc()
+  const { gateway } = useGatewayFromWallet(LocalGatewayName)
+  const [isLocalProducer, setIsLocalProducer] = useState(false)
+
+  useEffect(() => {
+    void (async () => {
+      const viewer = gateway?.connectionInstance.viewer
+      if (isDefinedNotNull(viewer)) {
+        const currentBlock = await viewer?.currentBlockNumber()
+        setIsLocalProducer(isDefined(currentBlock))
+      }
+    })()
+  }, [gateway])
 
   const producerIsReachable = isLocalProducer
   const walletIsInstalled = producerIsReachable && isDefined(gateway)
