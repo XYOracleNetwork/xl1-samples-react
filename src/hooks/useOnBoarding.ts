@@ -12,7 +12,7 @@ export const useOnBoarding = () => {
 
   useEffect(() => {
     void (async () => {
-      const viewer = gateway?.connectionInstance.viewer
+      const viewer = gateway?.connection.viewer
       if (isDefinedNotNull(viewer)) {
         const currentBlock = await viewer?.currentBlockNumber()
         setIsLocalProducer(isDefined(currentBlock))
