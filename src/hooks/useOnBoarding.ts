@@ -1,3 +1,4 @@
+import { delay } from '@xylabs/delay'
 import {
   isDefined, isDefinedNotNull, isUndefined,
 } from '@xylabs/typeof'
@@ -6,19 +7,29 @@ import { useEffect, useState } from 'react'
 
 import { LocalGatewayName } from '../helpers/index.ts'
 
+const INTERVAL = 2000 // 2 seconds
+
 export const useOnBoarding = () => {
-  const { gateway } = useGatewayFromWallet(LocalGatewayName)
+  const { gateway } = useGatewayFromWallet(LocalGatewayName, 5000)
+  const viewer = gateway?.connection.viewer
   const [isLocalProducer, setIsLocalProducer] = useState(false)
 
   useEffect(() => {
+    if (isUndefined(viewer)) return
+
     void (async () => {
-      const viewer = gateway?.connection.viewer
-      if (isDefinedNotNull(viewer)) {
-        const currentBlock = await viewer?.currentBlockNumber()
-        setIsLocalProducer(isDefined(currentBlock))
+      while (!isLocalProducer) {
+        try {
+          const block = await viewer.currentBlock()
+          setIsLocalProducer(isDefined(block))
+        } catch (err) {
+          console.error('Error checking if producer is local:', err)
+          setIsLocalProducer(false)
+        }
+        await delay(INTERVAL)
       }
     })()
-  }, [gateway])
+  }, [isLocalProducer, viewer])
 
   const producerIsReachable = isLocalProducer
   const walletIsInstalled = producerIsReachable && isDefined(gateway)
