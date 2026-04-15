@@ -32,19 +32,19 @@
   },
   "dependencies": {
     "@mui/material": "7.3.9",
-    "@xylabs/assert": "5.0.90",
-    "@xylabs/delay": "5.0.90",
-    "@xylabs/hex": "5.0.90",
-    "@xylabs/typeof": "5.0.90",
-    "@xyo-network/id-payload-plugin": "5.3.20",
-    "@xyo-network/payload-builder": "5.3.20",
-    "@xyo-network/react-chain-model": "1.20.12",
-    "@xyo-network/react-chain-client": "1.20.12",
-    "@xyo-network/xl1-protocol": "1.26.11",
-    "@xyo-network/xl1-rpc": "1.26.11",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "react-router-dom": "~7.13.2"
+    "@xylabs/assert": "5.0.95",
+    "@xylabs/delay": "5.0.95",
+    "@xylabs/hex": "5.0.95",
+    "@xylabs/typeof": "5.0.95",
+    "@xyo-network/id-payload-plugin": "5.3.30",
+    "@xyo-network/payload-builder": "5.3.30",
+    "@xyo-network/react-chain-model": "1.20.17",
+    "@xyo-network/react-chain-client": "1.20.17",
+    "@xyo-network/xl1-protocol": "1.26.27",
+    "@xyo-network/xl1-rpc": "1.26.27",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "react-router-dom": "~7.14.1"
   },
   "devDependencies": {
     "@emotion/react": "11.14.0",
@@ -52,19 +52,20 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "~6.0.1",
-    "@xylabs/eslint-config-flat": "7.5.11",
-    "@xylabs/tsconfig-react": "7.5.11",
-    "@xyo-network/xl1-cli": "^1.20.12",
-    "esbuild": "~0.27.4",
-    "eslint": "10.1.0",
+    "@xylabs/eslint-config-flat": "7.10.7",
+    "@xylabs/tsconfig-react": "7.10.7",
+    "@xyo-network/xl1-cli": "^1.20.17",
+    "esbuild": "~0.28.0",
+    "eslint": "10.2.0",
     "eslint-import-resolver-typescript": "4.4.4",
-    "dotenv": "17.3.1",
-    "npm-check-updates": "19.6.6",
+    "dotenv": "17.4.2",
+    "npm-check-updates": "21.0.0",
     "rollbar": "~3.1.0",
     "rollup": "~4.60.1",
     "typescript": "5.9.3",
+    "semver": "^7.7.4",
     "serve": "14.2.6",
-    "vite": "8.0.3",
+    "vite": "8.0.8",
     "vite-plugin-top-level-await": "1.6.0"
   },
   "engines": {
@@ -77,6 +78,5 @@
   },
   "publishConfig": {
     "access": "restricted"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  }
 }
