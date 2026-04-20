@@ -21,13 +21,13 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "check-node-version": "node ./scripts/check-node-version.mjs",
     "build": "npm run check-node-version && vite build --mode production",
+    "check-node-version": "node ./scripts/check-node-version.mjs",
     "lint": "eslint",
     "package-build": "npm run build",
     "serve": "npm run build && npx serve ./build",
-    "start-cli": "npx xl1 --logLevel='warn'",
     "start": "npx vite",
+    "start-cli": "npx xl1 --logLevel='warn'",
     "updo": "npx npm-check-updates -i"
   },
   "dependencies": {
@@ -38,8 +38,8 @@
     "@xylabs/typeof": "5.0.97",
     "@xyo-network/id-payload-plugin": "5.3.30",
     "@xyo-network/payload-builder": "5.3.30",
-    "@xyo-network/react-chain-model": "1.20.21",
     "@xyo-network/react-chain-client": "1.20.21",
+    "@xyo-network/react-chain-model": "1.20.21",
     "@xyo-network/xl1-protocol": "1.26.34",
     "@xyo-network/xl1-rpc": "1.26.34",
     "react": "19.2.5",
@@ -53,25 +53,27 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "~6.0.1",
     "@xylabs/eslint-config-flat": "7.10.8",
+    "@xylabs/eslint-config-react-flat": "^7.10.8",
+    "@xylabs/toolchain": "^7.10.8",
     "@xylabs/tsconfig-react": "7.10.8",
     "@xyo-network/xl1-cli": "^1.20.21",
+    "dotenv": "17.4.2",
     "esbuild": "~0.28.0",
     "eslint": "10.2.1",
     "eslint-import-resolver-typescript": "4.4.4",
-    "dotenv": "17.4.2",
     "npm-check-updates": "21.0.2",
     "rollbar": "~3.1.0",
     "rollup": "~4.60.2",
-    "typescript": "5.9.3",
     "semver": "^7.7.4",
     "serve": "14.2.6",
+    "typescript": "5.9.3",
     "vite": "8.0.9",
     "vite-plugin-top-level-await": "1.6.0"
   },
   "volta": {
     "node": "24.1.1",
-    "yarn": "4.9.2",
-    "npm": "10.9.2"
+    "npm": "10.9.2",
+    "yarn": "4.9.2"
   },
   "publishConfig": {
     "access": "restricted"
