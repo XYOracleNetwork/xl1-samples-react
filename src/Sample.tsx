@@ -5,7 +5,7 @@ import { assertEx } from '@xylabs/assert'
 import type { Hash } from '@xylabs/hex'
 import { isHash } from '@xylabs/hex'
 import { isUndefined } from '@xylabs/typeof'
-import { useGateway } from '@xyo-network/react-chain-provider'
+import { useGatewayFromWallet } from '@xyo-network/react-chain-client'
 import { useState } from 'react'
 
 import {
@@ -16,7 +16,7 @@ import { buildSamplePayloads, LocalGatewayName } from './helpers/index.ts'
 export const XL1BrowserSample = () => {
   const [error, setError] = useState<Error>()
   const [confirmed, setConfirmed] = useState<Hash>()
-  const { gateway, error: gatewayError } = useGateway(LocalGatewayName)
+  const { gateway, error: gatewayError } = useGatewayFromWallet(LocalGatewayName)
 
   const submitTransaction = async () => {
     setError(undefined)

@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import { config } from 'dotenv'
 import { defineConfig } from 'vite'
 import topLevelAwait from 'vite-plugin-top-level-await'
