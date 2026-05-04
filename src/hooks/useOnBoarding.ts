@@ -10,7 +10,7 @@ import { LocalGatewayName } from '../helpers/index.ts'
 const INTERVAL = 2000 // 2 seconds
 
 export const useOnBoarding = () => {
-  const { gateway } = useGatewayFromWallet(LocalGatewayName, 5000)
+  const { gateway, isLoading: walletIsLoading } = useGatewayFromWallet(LocalGatewayName, 5000)
   const viewer = gateway?.connection.viewer
   const [isLocalProducer, setIsLocalProducer] = useState(false)
 
@@ -31,10 +31,10 @@ export const useOnBoarding = () => {
     })()
   }, [isLocalProducer, viewer])
 
-  const producerIsReachable = isLocalProducer
-  const walletIsInstalled = producerIsReachable && isDefined(gateway)
-  const walletIsNotInstalled = producerIsReachable ? isUndefined(gateway) : undefined
-  const showSubmitTransaction = producerIsReachable && walletIsInstalled
+  const walletIsInstalled = isDefinedNotNull(gateway)
+  const walletIsNotInstalled = !walletIsLoading && gateway === null
+  const producerIsReachable = walletIsInstalled ? isLocalProducer : undefined
+  const showSubmitTransaction = walletIsInstalled && producerIsReachable === true
 
   return {
     producerIsReachable,

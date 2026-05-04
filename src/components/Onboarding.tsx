@@ -14,13 +14,17 @@ export const Onboarding: React.FC = () => {
 
   return (
     <>
-      <SectionHeadingTypography active={!producerIsReachable}>Start Producer and Copy Seed Phrase</SectionHeadingTypography>
-      {producerIsReachable ? <RunProducerAlerts.Found /> : <RunProducerAlerts.NotFound />}
-      {producerIsReachable && <RunProducerAlerts.CopyPhrase />}
-      <SectionHeadingTypography active={walletIsNotInstalled}>Install and Setup Wallet</SectionHeadingTypography>
+      <SectionHeadingTypography active={walletIsNotInstalled === true}>Install and Setup Wallet</SectionHeadingTypography>
       {walletIsNotInstalled === true && <WalletAlerts.NotInstalled />}
       {walletIsInstalled === true && <WalletAlerts.Installed />}
       {walletIsInstalled === true && <WalletAlerts.Setup />}
+      {walletIsInstalled === true && (
+        <>
+          <SectionHeadingTypography active={!producerIsReachable}>Start Producer and Copy Seed Phrase</SectionHeadingTypography>
+          {producerIsReachable ? <RunProducerAlerts.Found /> : <RunProducerAlerts.NotFound />}
+          {producerIsReachable && <RunProducerAlerts.CopyPhrase />}
+        </>
+      )}
     </>
   )
 }
