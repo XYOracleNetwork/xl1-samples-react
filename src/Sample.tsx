@@ -5,7 +5,7 @@ import { assertEx } from '@xylabs/assert'
 import type { Hash } from '@xylabs/hex'
 import { isHash } from '@xylabs/hex'
 import { isUndefined } from '@xylabs/typeof'
-import { useGatewayFromWallet } from '@xyo-network/react-chain-client'
+import { useGatewayFromWallet } from '@xyo-network/xl1-react-client-sdk'
 import { useState } from 'react'
 
 import {
