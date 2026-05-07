@@ -2,7 +2,7 @@ import { delay } from '@xylabs/delay'
 import {
   isDefined, isDefinedNotNull, isUndefined,
 } from '@xylabs/typeof'
-import { useGatewayFromWallet } from '@xyo-network/react-chain-client'
+import { useGatewayFromWallet } from '@xyo-network/xl1-react-client-sdk'
 import { useEffect, useState } from 'react'
 
 import { LocalGatewayName } from '../helpers/index.ts'
