@@ -135,21 +135,6 @@
     "webextension-polyfill": "^0.10.0 || ^0.11.0 || ^0.12.0",
     "zod": "^4"
   },
-  "peerDependencies": {
-    "@opentelemetry/api": "^1",
-    "@xylabs/react-promise": "~7.1.20",
-    "@xylabs/sdk-js": "^5",
-    "@xylabs/zod": "~5.0",
-    "@xyo-network/hash": "~5.3.30",
-    "@xyo-network/payload-validator": "~5.3",
-    "@xyo-network/sdk-js": "^5",
-    "ajv": "^8",
-    "axios": "^1",
-    "ethers": "^6",
-    "pako": "~2.1.0",
-    "storybook": "^10.3.5",
-    "zod": "^4"
-  },
   "volta": {
     "node": "24.1.1",
     "npm": "10.9.2",
