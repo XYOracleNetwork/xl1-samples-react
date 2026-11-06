@@ -3,7 +3,7 @@ import {
   Alert, AlertTitle, Button, Collapse,
   Stack,
 } from '@mui/material'
-import { isDefined } from '@xylabs/typeof'
+import { isDefined } from '@ariestools/sdk'
 import React, { useState } from 'react'
 
 export interface CollapsableAlertProps extends AlertProps {

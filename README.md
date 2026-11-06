@@ -1,6 +1,7 @@
+[![logo][]](https://xyo.network)
+
 # @xyo-network/xl1-protocol-samples-react
 
-[![logo][]](https://xyo.network)
 
 [![main-build][]][main-build-link]
 
@@ -28,9 +29,8 @@ XYO Layer One Protocol Sample Code (React)
 
 ## Credits
 
-[Made with 🔥 and ❄️ by XYO](https://xyo.network)
-
-[logo]: https://cdn.xy.company/img/brand/XYO_full_colored.png
+[Made with 🔥 and ❄️ by XYO Foundation](https://xyo.network)
 
 [main-build]: https://github.com/XYOracleNetwork/xl1-samples-react/actions/workflows/build.yml/badge.svg
 [main-build-link]: https://github.com/XYOracleNetwork/xl1-samples-react/actions/workflows/build.yml
+[logo]: https://cdn.xy.company/img/brand/XYO_full_colored.png

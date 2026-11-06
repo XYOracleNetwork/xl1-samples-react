@@ -1,7 +1,7 @@
 import { delay } from '@xylabs/delay'
 import {
   isDefined, isDefinedNotNull, isUndefined,
-} from '@xylabs/typeof'
+} from '@ariestools/sdk'
 import { useGatewayFromWallet } from '@xyo-network/react-chain-client'
 import { useEffect, useState } from 'react'
 

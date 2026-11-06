@@ -1,6 +1,6 @@
 import type { ButtonProps } from '@mui/material'
 import { Button } from '@mui/material'
-import { isUndefined } from '@xylabs/typeof'
+import { isUndefined } from '@ariestools/sdk'
 import { useGatewayFromWallet } from '@xyo-network/react-chain-client'
 
 import { LocalGatewayName } from '../../helpers/index.ts'

@@ -31,13 +31,12 @@
     "updo": "npx npm-check-updates -i"
   },
   "dependencies": {
+    "@ariestools/sdk": "5.0.97",
     "@mui/material": "7.3.9",
     "@vitejs/plugin-react": "~6.0.1",
-    "@xylabs/assert": "5.0.97",
     "@xylabs/delay": "5.0.97",
     "@xylabs/eslint-config-flat": "~7.10.8",
     "@xylabs/hex": "5.0.97",
-    "@xylabs/typeof": "5.0.97",
     "@xyo-network/id-payload-plugin": "5.3.30",
     "@xyo-network/payload-builder": "5.3.30",
     "@xyo-network/react-chain-client": "1.20.23",
@@ -51,6 +50,7 @@
     "vite-plugin-top-level-await": "~1.6.0"
   },
   "devDependencies": {
+    "@ariestools/toolchain": "~9.0.2",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
     "@metamask/providers": "^22",
@@ -62,7 +62,6 @@
     "@xylabs/geo": "^5",
     "@xylabs/react-promise": "~7.1.20",
     "@xylabs/sdk-js": "^5",
-    "@xylabs/toolchain": "^7.10.8",
     "@xylabs/tsconfig": "~7.10",
     "@xylabs/tsconfig-dom": "~7.10",
     "@xylabs/tsconfig-react": "7.10.8",
@@ -83,7 +82,7 @@
     "@xyo-network/config-payload-plugin": "~5.3.30",
     "@xyo-network/data": "~5.3.30",
     "@xyo-network/diviner-abstract": "~5.3",
-    "@xyo-network/diviner-boundwitness-memory": "~5.3.30",
+    "@xyo-network/diviner-boundwitness": "~5.3.30",
     "@xyo-network/diviner-identity": "~5.3.30",
     "@xyo-network/diviner-model": "~5.3.30",
     "@xyo-network/diviner-payload-generic": "~5.3.30",
@@ -119,7 +118,6 @@
     "@xyo-network/xl1-cli": "^1.20.21",
     "acorn": "^6.0.0 || ^7.0.0 || ^8.0.0",
     "ajv": "^8",
-    "axios": "^1",
     "esbuild": "~0.28.0",
     "eslint": "10.2.1",
     "eslint-import-resolver-typescript": "4.4.4",
@@ -144,18 +142,24 @@
     "@xyo-network/payload-validator": "~5.3",
     "@xyo-network/sdk-js": "^5",
     "ajv": "^8",
-    "axios": "^1",
     "ethers": "^6",
     "pako": "~2.1.0",
     "storybook": "^10.3.5",
     "zod": "^4"
   },
-  "volta": {
-    "node": "24.1.1",
-    "npm": "10.9.2",
-    "yarn": "4.9.2"
-  },
   "publishConfig": {
     "access": "restricted"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error",
+      "version": ">=26.0.0 <27.0.0"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error",
+      "version": ">=12.0.0 <13.0.0"
+    }
   }
 }

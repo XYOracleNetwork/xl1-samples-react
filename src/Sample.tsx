@@ -1,10 +1,10 @@
 import {
   Alert, Container, Stack,
 } from '@mui/material'
-import { assertEx } from '@xylabs/assert'
+import { assertEx } from '@ariestools/sdk'
 import type { Hash } from '@xylabs/hex'
 import { isHash } from '@xylabs/hex'
-import { isUndefined } from '@xylabs/typeof'
+import { isUndefined } from '@ariestools/sdk'
 import { useGatewayFromWallet } from '@xyo-network/react-chain-client'
 import { useState } from 'react'
 

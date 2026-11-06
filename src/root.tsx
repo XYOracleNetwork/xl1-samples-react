@@ -1,4 +1,4 @@
-import { assertEx } from '@xylabs/assert'
+import { assertEx } from '@ariestools/sdk'
 import React from 'react'
 // eslint-disable-next-line import-x/no-internal-modules
 import { createRoot } from 'react-dom/client'
